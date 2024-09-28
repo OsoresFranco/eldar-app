@@ -12,7 +12,8 @@
     {
       "id": 1,
       "name": "Franco Osores",
-      "role": "admin"
+      "role": "admin",
+      "jwt": ""
     }
   ]
 }
