@@ -1,5 +1,10 @@
 {
-    "AUTH_HOME":{
-        "TITLE": "Bienvenido"
-    }
+  "AUTH_HOME": {
+    "TITLE": "Iniciar sesión",
+    "CTA": "Nos alegra tenerte de regreso y estamos listos para satisfacer tus necesidades. \nInicia sesión y continúa aprovechando al máximo nuestra plataforma.",
+    "MONITOR_FEATURE": "Optimiza la productividad en todos tus proyectos con una sola herramienta",
+    "MONITOR_FEATURE_TITLE": "Sea eficiente",
+    "ORGANIZED_FEATURE_TITLE": "Sea Organizado",
+    "ORGANIZED_FEATURE": "Los administradores pueden tener una visión general de todas las tareas y su distribución en el tiempo."
+  }
 }

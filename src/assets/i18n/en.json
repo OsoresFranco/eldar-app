@@ -1,5 +1,10 @@
 {
-    "AUTH_HOME":{
-        "TITLE": "Welcome"
-    }
+  "AUTH_HOME": {
+    "TITLE": "Login",
+    "CTA": "We're glad to have you back and we're ready to meet your needs. Log in and continue to get the most out of our platform.",
+    "MONITOR_FEATURE": "Optimize productivity across all your projects with a single tool",
+    "MONITOR_FEATURE_TITLE": "Be Efficient",
+    "ORGANIZED_FEATURE_TITLE": "Be Organized",
+    "ORGANIZED_FEATURE": "Administrators can have an overview of all tasks and their distribution over time."
+  }
 }
