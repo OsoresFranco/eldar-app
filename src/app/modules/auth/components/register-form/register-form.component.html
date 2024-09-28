@@ -1,4 +1,11 @@
 <div class="register-form">
+  <div class="register-form__logo">
+    <img
+      class="register-form__logo-img"
+      src="assets/images/logo.png"
+      alt="Eldar logo"
+    />
+  </div>
   <div class="register-form__title">{{ "APP_TITLE" | translate }}</div>
   <div class="register-form__sub-title">
     {{ "REGISTER_FORM.REGISTER_TITLE" | translate }}
@@ -41,7 +48,12 @@
     </div>
     <div class="register-form__form-input">
       <p-floatLabel>
-        <input pInputText type="password" id="password" formControlName="password" />
+        <input
+          pInputText
+          type="password"
+          id="password"
+          formControlName="password"
+        />
         <label for="password">{{ "REGISTER_FORM.PASSWORD" | translate }}</label>
       </p-floatLabel>
       <small
