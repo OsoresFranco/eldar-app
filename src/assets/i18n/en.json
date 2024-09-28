@@ -6,5 +6,13 @@
     "MONITOR_FEATURE_TITLE": "Be Efficient",
     "ORGANIZED_FEATURE_TITLE": "Be Organized",
     "ORGANIZED_FEATURE": "Administrators can have an overview of all tasks and their distribution over time."
+  },
+  "LOGIN_FORM": {
+    "BUTTON_LABEL": "Submit",
+    "REGISTER": "No account yet?",
+    "PASSWORD": "Password",
+    "EMAIL": "Email",
+    "DISCLAIMER": "Subject to the",
+    "DISCLAIMER_POLICY": "Privacy Policy and Terms."
   }
 }
