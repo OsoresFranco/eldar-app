@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'eldar-app';
 
-  constructor() {}
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    // this.translate.setDefaultLang('es');
-    // const browserLang = this.translate.getBrowserLang();
-    // const supportedLanguages = ['es', 'en'];
+    this.translate.setDefaultLang('es');
+    const browserLang = this.translate.getBrowserLang();
+    const supportedLanguages = ['es', 'en'];
 
-    // const selectedLang =
-    //   browserLang && supportedLanguages.includes(browserLang)
-    //     ? browserLang
-    //     : 'es';
+    const selectedLang =
+      browserLang && supportedLanguages.includes(browserLang)
+        ? browserLang
+        : 'es';
 
-    // this.translate.use(selectedLang);
+    this.translate.use(selectedLang);
   }
 }
