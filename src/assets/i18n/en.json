@@ -13,6 +13,19 @@
     "PASSWORD": "Password",
     "EMAIL": "Email",
     "DISCLAIMER": "Subject to the",
-    "DISCLAIMER_POLICY": "Privacy Policy and Terms."
-  }
+    "DISCLAIMER_POLICY": "Privacy Policy and Terms.",
+    "LOGIN_TITLE": "Log in"
+  },
+  "REGISTER_FORM": {
+    "NAME": "Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REGISTER": "Already have an account?",
+    "BUTTON_LABEL": "Register",
+    "DISCLAIMER": "Subject to the",
+    "DISCLAIMER_POLICY": "Privacy Policy and Terms.",
+    "REGISTER_TITLE": "Register"
+  },
+  "APP_TITLE": "Eldar Taskify Application"
 }

@@ -13,6 +13,19 @@
     "PASSWORD": "Contraseña",
     "EMAIL": "Correo Electrónico",
     "DISCLAIMER": "Sujeto a la Política de",
-    "DISCLAIMER_POLICY": "Privacidad y Condiciones."
-  }
+    "DISCLAIMER_POLICY": "Privacidad y Condiciones.",
+    "LOGIN_TITLE": "Iniciar Sesión"
+  },
+  "REGISTER_FORM": {
+    "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "EMAIL": "Correo electrónico",
+    "PASSWORD": "Contraseña",
+    "REGISTER": "¿Ya tienes una cuenta?",
+    "BUTTON_LABEL": "Registrarse",
+    "DISCLAIMER": "Sujeto a la",
+    "DISCLAIMER_POLICY": "Política de privacidad y términos.",
+    "REGISTER_TITLE": "Registrarse"
+  },
+  "APP_TITLE": "Eldar Taskify Application"
 }

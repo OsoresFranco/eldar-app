@@ -1,6 +1,8 @@
 <div class="login-form">
-  <div class="login-form__title">Portal de Monitoreo</div>
-  <div class="login-form__sub-title">Iniciar sesión</div>
+  <div class="login-form__title">{{ "APP_TITLE" | translate }}</div>
+  <div class="login-form__sub-title">
+    {{ "LOGIN_FORM.LOGIN_TITLE" | translate }}
+  </div>
   <form [formGroup]="form" class="login-form__form">
     <div class="login-form__form-input">
       <p-floatLabel>
@@ -15,7 +17,12 @@
     </div>
     <div class="login-form__form-input">
       <p-floatLabel>
-        <input pInputText id="password" formControlName="password" />
+        <input
+          pInputText
+          type="password"
+          id="password"
+          formControlName="password"
+        />
         <label for="password">{{ "LOGIN_FORM.PASSWORD" | translate }}</label>
       </p-floatLabel>
       <small

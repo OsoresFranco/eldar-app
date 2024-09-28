@@ -1,0 +1,70 @@
+<div class="register-form">
+  <div class="register-form__title">{{ "APP_TITLE" | translate }}</div>
+  <div class="register-form__sub-title">
+    {{ "REGISTER_FORM.REGISTER_TITLE" | translate }}
+  </div>
+  <form [formGroup]="form" class="register-form__form">
+    <div class="register-form__form-input">
+      <p-floatLabel>
+        <input pInputText id="name" formControlName="name" />
+        <label for="name">{{ "REGISTER_FORM.NAME" | translate }}</label>
+      </p-floatLabel>
+      <small
+        class="register-form__form-input-error"
+        *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+        >Not a valid name.</small
+      >
+    </div>
+    <div class="register-form__form-input">
+      <p-floatLabel>
+        <input pInputText id="lastName" formControlName="lastName" />
+        <label for="lastName">{{
+          "REGISTER_FORM.LAST_NAME" | translate
+        }}</label>
+      </p-floatLabel>
+      <small
+        class="register-form__form-input-error"
+        *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched"
+        >Not a valid lastName.</small
+      >
+    </div>
+    <div class="register-form__form-input">
+      <p-floatLabel>
+        <input pInputText id="email" formControlName="email" />
+        <label for="email">{{ "REGISTER_FORM.EMAIL" | translate }}</label>
+      </p-floatLabel>
+      <small
+        class="register-form__form-input-error"
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        >Not a valid email.</small
+      >
+    </div>
+    <div class="register-form__form-input">
+      <p-floatLabel>
+        <input pInputText type="password" id="password" formControlName="password" />
+        <label for="password">{{ "REGISTER_FORM.PASSWORD" | translate }}</label>
+      </p-floatLabel>
+      <small
+        class="register-form__form-input-error"
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        >Not a valid password.</small
+      >
+    </div>
+  </form>
+  <div class="register-form__actions">
+    <div class="register-form__actions-register" (click)="changeAction()">
+      {{ "REGISTER_FORM.REGISTER" | translate }}
+    </div>
+    <p-button
+      class="register-form__actions-button"
+      (click)="submitForm()"
+      [label]="'REGISTER_FORM.BUTTON_LABEL' | translate"
+      icon="pi pi-sign-in"
+      iconPos="right"
+    />
+  </div>
+  <div class="register-form__disclaimer">
+    {{ "REGISTER_FORM.DISCLAIMER" | translate }}
+    <span>{{ "REGISTER_FORM.DISCLAIMER_POLICY" | translate }}</span>
+  </div>
+</div>
