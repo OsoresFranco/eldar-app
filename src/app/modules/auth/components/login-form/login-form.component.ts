@@ -1,4 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginFormComponent {
+  @Output() changeAtuhAction = new EventEmitter<string>();
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -21,5 +27,9 @@ export class LoginFormComponent {
     if (this.form.valid) {
       console.log(this.form.value);
     }
+  }
+
+  changeAction() {
+    this.changeAtuhAction.emit('register');
   }
 }

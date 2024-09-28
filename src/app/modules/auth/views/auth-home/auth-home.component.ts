@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './auth-home.component.html',
   styleUrl: './auth-home.component.scss',
 })
-export class AuthHomeComponent {}
+export class AuthHomeComponent {
+  authAction: string = 'login';
+
+  changeAuthAction(action: string) {
+    this.authAction = action;
+  }
+}

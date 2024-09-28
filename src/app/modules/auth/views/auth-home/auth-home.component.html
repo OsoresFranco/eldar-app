@@ -37,6 +37,11 @@
     </div>
   </div>
   <div class="auth-home__action">
-    <app-login-form></app-login-form>
+    <ng-container *ngIf="authAction === 'login'">
+      <app-login-form (changeAtuhAction)="changeAuthAction($event)"></app-login-form>
+    </ng-container>
+    <ng-container *ngIf="authAction === 'register'">
+      DAHHH
+    </ng-container>
   </div>
 </div>
