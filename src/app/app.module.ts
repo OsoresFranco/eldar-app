@@ -9,7 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ROOT_REDUCERS } from './state/app.state';
+import { taskReducer } from './state/reducers/tasks.reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,7 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreModule.forRoot({ tasks: taskReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],

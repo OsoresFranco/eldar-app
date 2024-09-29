@@ -1,10 +1,8 @@
-import { createSelector } from '@ngrx/store';
-import { AppState } from '../app.state';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { Task } from '../../core/interfaces/Task.interface';
 
-export const selectTasksFeature = (state: AppState) => state;
+export const selectTasks = createFeatureSelector<ReadonlyArray<Task>>('tasks');
 
-export const selectTasksList = createSelector(
-  selectTasksFeature,
-  (state: AppState) => state.tasks
-);
+export const selectTaskList = createSelector(selectTasks, (tasks) => {
+  return tasks;
+});

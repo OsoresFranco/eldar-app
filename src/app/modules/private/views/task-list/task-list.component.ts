@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { TaskService } from '../../services/task.service';
-import { Observable } from 'rxjs'
 import { Store, select } from '@ngrx/store';
-import { selectTasksList } from '../../../../state/selectors/tasks.selectors';
 import { Task } from '../../../../core/interfaces/Task.interface';
-import { getTasks } from '../../../../state/actions/tasks.actions';
+import { selectTasks } from '../../../../state/selectors/tasks.selectors';
+import { taskActions } from '../../../../state/actions/tasks.actions';
 
 @Component({
   selector: 'app-task-list',
@@ -12,12 +11,23 @@ import { getTasks } from '../../../../state/actions/tasks.actions';
   styleUrl: './task-list.component.scss',
 })
 export class TaskListComponent {
-  tasks:Task[] = [];
+  tasks$: any;
+  tasks: Task[] = [];
 
-
-  constructor(private taskService: TaskService, private store: Store) {}
+  constructor(private taskService: TaskService, private store: Store) {
+    this.tasks$ = this.store.select(selectTasks).pipe().subscribe({
+      next: (res) => {
+        console.log('LOCOOO',res);
+      },
+    });
+  }
 
   ngOnInit(): void {
+    this.taskService.getTasksTest().subscribe({
+      next: (res) => {
+        this.store.dispatch(taskActions.retrievedTasksList({ tasks: res }));
+      },
+    });
     // this.tasks = this.store.select(selectTasksList);
     // this.store.dispatch(getTasks());
     // this.taskService.getTasks().subscribe((data: any) => {

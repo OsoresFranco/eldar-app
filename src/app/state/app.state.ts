@@ -6,6 +6,6 @@ export interface AppState {
   tasks: Task[];
 }
 
-export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
-  tasks: taskReducer,
-};
+// export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
+// tasks: taskReducer
+// };
