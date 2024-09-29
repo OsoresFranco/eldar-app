@@ -1,19 +1,16 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "users": [
     {
       "id": 1,
       "name": "Franco Osores",
       "role": "admin",
-      "jwt": ""
+      "token": "1234"
+    },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "role": "user",
+      "token": "123"
     }
   ],
   "tasks": [
