@@ -3,16 +3,29 @@
 .tasks-table {
   padding: 1rem;
 
-  &__title {
+  &__header {
     display: flex;
     align-items: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: #000000;
-    height: 3rem;
+    gap: 1rem;
+    &-title {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
+      height: 3rem;
+    }
+    .p-button{
+      height: 30px;
+      font-size: 12px;
+    }
+    .pi{
+      font-size: 12px;
+    }
   }
+
   &__data-row {
-    &--due{
+    &--due {
       background: #fff5f5;
     }
   }
