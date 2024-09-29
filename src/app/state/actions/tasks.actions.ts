@@ -4,6 +4,6 @@ import { Task } from '../../core/interfaces/Task.interface';
 export const taskActions = createActionGroup({
   source: 'Tasks API',
   events: {
-    'Retrieved tasks List': props<{ tasks: ReadonlyArray<Task> }>(),
+    'Get Tasks List': props<{ tasks: Task[] }>(),
   },
 });

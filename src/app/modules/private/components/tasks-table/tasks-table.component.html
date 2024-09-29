@@ -4,55 +4,59 @@
     <p-button label="crear" icon="pi pi-plus" iconPos="right" />
   </div>
 
-  <p-table [value]="tasks" [tableStyle]="{ 'min-width': '30rem' }">
-    <ng-template pTemplate="header" let-columns>
-      <tr>
-        <ng-container *ngFor="let header of headers">
-          <th>{{ header }}</th>
-        </ng-container>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-tasks let-columns="columns">
-      <tr class="tasks-table__data-row {{ isDueDate(tasks.deadline) }}">
-        <td>
-          {{ tasks.user }}
-        </td>
-        <td>
-          {{ tasks.title }}
-        </td>
-        <td>
-          {{ tasks.createdAt | date : "dd/MM/yyyy" }}
-        </td>
-        <td>
-          {{ tasks.deadline | date : "dd/MM/yyyy" }}
-        </td>
-        <td
-          class="tasks-table__data tasks-table__data--status {{ tasks.status }}"
-        >
-          <p-dropdown
-            [options]="statusList"
-            [(ngModel)]="tasks.status"
-            (onChange)="onStatusSelect($event)"
-            placeholder="Status"
-          />
-        </td>
-        <td
-          class="tasks-table__data tasks-table__data--status {{
-            tasks.complexity
-          }}"
-        >
-          <p-dropdown
-            [disabled]="true"
-            [options]="complexityList"
-            [(ngModel)]="tasks.complexity"
-            (onChange)="onComplexitySelect($event)"
-            placeholder="Complexity"
-          />
-        </td>
-        <td>
-          {{ tasks.actions }}
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
+  <ng-container *ngIf="tasks.length > 0">
+    <p-table [value]="tasks" [tableStyle]="{ 'min-width': '30rem' }">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <ng-container *ngFor="let header of headers">
+            <th>{{ header }}</th>
+          </ng-container>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-tasks let-columns="columns">
+        <tr class="tasks-table__data-row {{ isDueDate(tasks.deadline) }}">
+          <td>
+            {{ tasks.user }}
+          </td>
+          <td>
+            {{ tasks.title }}
+          </td>
+          <td>
+            {{ tasks.createdAt | date : "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ tasks.deadline | date : "dd/MM/yyyy" }}
+          </td>
+          <td
+            class="tasks-table__data tasks-table__data--status {{
+              tasks.status
+            }}"
+          >
+            <p-dropdown
+              [options]="statusList"
+              [(ngModel)]="tasks.status"
+              (onChange)="onStatusSelect($event)"
+              placeholder="Status"
+            />
+          </td>
+          <td
+            class="tasks-table__data tasks-table__data--status {{
+              tasks.complexity
+            }}"
+          >
+            <p-dropdown
+              [disabled]="true"
+              [options]="complexityList"
+              [(ngModel)]="tasks.complexity"
+              (onChange)="onComplexitySelect($event)"
+              placeholder="Complexity"
+            />
+          </td>
+          <td>
+            {{ tasks.actions }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-container>
 </div>

@@ -1,4 +1,12 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
+import { Task } from '../../../../core/interfaces/Task.interface';
 
 @Component({
   selector: 'app-tasks-table',
@@ -6,10 +14,25 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrl: './tasks-table.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class TasksTableComponent implements OnInit {
-  @Input() tasks: any[] = [];
+export class TasksTableComponent implements OnInit, OnChanges {
+  @Input() tasks: Task[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.tasks);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['tasks'] && changes['tasks'].currentValue) {
+      const currentTasks = changes['tasks'].currentValue;
+
+      if (currentTasks.tasks) {
+        this.tasks = currentTasks.tasks;
+      } else {
+        this.tasks = currentTasks;
+      }
+      console.log(this.tasks);
+    }
+  }
 
   headers: string[] = [
     'user',
