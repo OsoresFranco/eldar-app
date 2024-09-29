@@ -15,5 +15,52 @@
       "role": "admin",
       "jwt": ""
     }
+  ],
+  "tasks": [
+    {
+      "user": "John Doe",
+      "title": "Finalize marketing report",
+      "createdAt": "2024-09-20",
+      "deadline": "2024-10-05",
+      "status": "in progress",
+      "complexity": "medium",
+      "actions": ["Edit", "Delete", "Assign"]
+    },
+    {
+      "user": "Jane Smith",
+      "title": "Schedule client meeting",
+      "createdAt": "2024-09-25",
+      "deadline": "2024-10-02",
+      "status": "pending",
+      "complexity": "low",
+      "actions": ["Edit", "Delete", "Assign"]
+    },
+    {
+      "user": "Unassigned",
+      "title": "Prepare budget proposal",
+      "createdAt": "2024-09-28",
+      "deadline": "2024-10-15",
+      "status": "unassigned",
+      "complexity": "high",
+      "actions": ["Assign"]
+    },
+    {
+      "user": "Mike Johnson",
+      "title": "Fix bug in the login page",
+      "createdAt": "2024-09-22",
+      "deadline": "2024-09-30",
+      "status": "blocked",
+      "complexity": "medium",
+      "actions": ["Edit", "Delete", "Assign"]
+    },
+    {
+      "user": "Sarah Williams",
+      "title": "Design new website layout",
+      "createdAt": "2024-09-18",
+      "deadline": "2024-10-10",
+      "status": "completed",
+      "complexity": "high",
+      "actions": ["View"]
+    }
   ]
 }

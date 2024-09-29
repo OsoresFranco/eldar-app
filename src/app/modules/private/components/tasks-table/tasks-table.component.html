@@ -32,6 +32,7 @@
         </td>
         <td class="tasks-table__data tasks-table__data--status {{tasks.complexity}}">
           <p-dropdown
+            [disabled]="true"
             [options]="complexityList"
             [(ngModel)]="tasks.complexity"
             (onChange)="onComplexitySelect($event)"
