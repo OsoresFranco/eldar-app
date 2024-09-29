@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from '../../shared/shared.module';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { HomeComponent } from './views/home/home.component';
+import { TasksTableComponent } from './components/tasks-table/tasks-table.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HomeComponent } from './views/home/home.component';
     FooterComponent,
     LinkItemComponent,
     HomeComponent,
+    TasksTableComponent,
   ],
   imports: [CommonModule, PrivateRoutingModule, SharedModule],
 })
