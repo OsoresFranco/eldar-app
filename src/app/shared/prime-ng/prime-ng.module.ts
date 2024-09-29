@@ -6,6 +6,9 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -17,6 +20,9 @@ import { TableModule } from 'primeng/table';
     SidebarModule,
     TooltipModule,
     TableModule,
+    DropdownModule,
+    MenuModule,
+    ToastModule
   ],
 })
 export class PrimeNgModule {}

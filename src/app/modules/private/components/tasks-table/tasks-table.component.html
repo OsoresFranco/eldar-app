@@ -1,29 +1,47 @@
 <div class="tasks-table">
-    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-      <ng-template pTemplate="header" let-columns>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Quantity</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-product let-columns="columns">
-        <tr>
-          <td>
-            {{ product.name }}
-          </td>
-          <td>
-            {{ product.price }}
-          </td>
-          <td>
-            {{ product.category }}
-          </td>
-          <td>
-            {{ product.quantity }}
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-  
+  <div class="tasks-table__title">Tareas</div>
+  <p-table [value]="tasks" [tableStyle]="{ 'min-width': '30rem' }">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <ng-container *ngFor="let header of headers">
+          <th>{{ header }}</th>
+        </ng-container>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tasks let-columns="columns">
+      <tr class="tasks-table__data-row {{isDueDate(tasks.deadline)}}">
+        <td>
+          {{ tasks.user }}
+        </td>
+        <td>
+          {{ tasks.title }}
+        </td>
+        <td>
+          {{ tasks.createdAt | date : "dd/MM/yyyy" }}
+        </td>
+        <td>
+          {{ tasks.deadline | date : "dd/MM/yyyy" }}
+        </td>
+        <td class="tasks-table__data tasks-table__data--status {{tasks.status}}">
+          <p-dropdown
+            [options]="statusList"
+            [(ngModel)]="tasks.status"
+            (onChange)="onStatusSelect($event)"
+            placeholder="Status"
+          />
+        </td>
+        <td class="tasks-table__data tasks-table__data--status {{tasks.complexity}}">
+          <p-dropdown
+            [options]="complexityList"
+            [(ngModel)]="tasks.complexity"
+            (onChange)="onComplexitySelect($event)"
+            placeholder="Complexity"
+          />
+        </td>
+        <td>
+          {{ tasks.actions }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

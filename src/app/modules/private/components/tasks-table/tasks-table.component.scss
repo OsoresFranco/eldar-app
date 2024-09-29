@@ -1,0 +1,75 @@
+@import "../../../../../styles/vars";
+
+.tasks-table {
+  padding: 1rem;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    height: 3rem;
+  }
+  &__data-row {
+    &--due{
+      background: #ffe6e6;
+    }
+  }
+  .test {
+    background: red;
+  }
+  .p-dropdown {
+    width: 150px;
+  }
+  .p-dropdown .p-dropdown-label {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  // Table styling customized
+  th {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8ec2d0;
+    text-align: center;
+  }
+  td {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #373737;
+    text-align: center;
+  }
+
+  .pending .p-dropdown .p-dropdown-label {
+    color: #f1c40f;
+  }
+
+  .blocked .p-dropdown .p-dropdown-label {
+    color: #e74c3c;
+  }
+
+  .inProgress .p-dropdown .p-dropdown-label {
+    color: #2980b9;
+  }
+
+  .completed .p-dropdown .p-dropdown-label {
+    color: #2ecc71;
+  }
+  .unassigned .p-dropdown .p-dropdown-label {
+    color: #95a5a6;
+  }
+
+  .low .p-dropdown .p-dropdown-label {
+    color: #2ecc71;
+  }
+
+  .medium .p-dropdown .p-dropdown-label {
+    color: #f1c40f;
+  }
+
+  .high .p-dropdown .p-dropdown-label {
+    color: #e74c3c;
+  }
+}
