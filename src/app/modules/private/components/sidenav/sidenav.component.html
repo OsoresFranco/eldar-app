@@ -3,6 +3,7 @@
     <div class="sidenav__bar">
       <ng-container *ngFor="let link of linkList">
         <app-link-item
+          (click)="toggleSidebar()"
           [icon]="link.icon"
           [label]="link.label"
           [route]="link.route"
@@ -10,9 +11,9 @@
       </ng-container>
     </div>
   </p-sidebar>
-  <div class="sidenav__compressed-list" (click)="toggleSidebar()">
+  <div class="sidenav__compressed-list">
     <div class="sidenav__compressed-list-logo">
-      <img src="assets/images/logo.png" alt="logo" />
+      <img src="assets/images/logo.png" alt="logo" (click)="toggleSidebar()" />
     </div>
     <div class="sidenav__compressed-list-items">
       <ng-container *ngFor="let link of linkList">

@@ -14,14 +14,15 @@ export class SidenavComponent {
     {
       icon: 'pi-desktop',
       label: 'Dashboard',
-      route: '/dashboard',
+      route: '/private/dashboard',
     },
     {
       icon: 'pi-inbox',
       label: 'Tasks',
-      route: '/tasks',
+      route: '/private/tasks',
     },
   ];
+  
   toggleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
   }

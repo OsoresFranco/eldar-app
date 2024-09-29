@@ -8,6 +8,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from '../../shared/shared.module';
 import { LinkItemComponent } from './components/link-item/link-item.component';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LinkItemComponent } from './components/link-item/link-item.component';
     SidenavComponent,
     FooterComponent,
     LinkItemComponent,
+    HomeComponent,
   ],
   imports: [CommonModule, PrivateRoutingModule, SharedModule],
 })
