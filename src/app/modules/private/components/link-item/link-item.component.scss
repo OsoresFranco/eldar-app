@@ -1,0 +1,11 @@
+@import "../../../../../styles/vars";
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &--active {
+    color: $primary-color;
+  }
+}

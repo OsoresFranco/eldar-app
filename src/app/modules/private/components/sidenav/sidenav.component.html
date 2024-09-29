@@ -1,0 +1,28 @@
+<div class="sidenav">
+  <p-sidebar [(visible)]="sidebarVisible">
+    <div class="sidenav__bar">
+      <ng-container *ngFor="let link of linkList">
+        <app-link-item
+          [icon]="link.icon"
+          [label]="link.label"
+          [route]="link.route"
+        ></app-link-item>
+      </ng-container>
+    </div>
+  </p-sidebar>
+  <div class="sidenav__compressed-list" (click)="toggleSidebar()">
+    <div class="sidenav__compressed-list-logo">
+      <img src="assets/images/logo.png" alt="logo" />
+    </div>
+    <div class="sidenav__compressed-list-items">
+      <ng-container *ngFor="let link of linkList">
+        <app-link-item
+          [icon]="link.icon"
+          [route]="link.route"
+          [label]="link.label"
+          [showLabel]="false"
+        ></app-link-item>
+      </ng-container>
+    </div>
+  </div>
+</div>
