@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Store, select } from '@ngrx/store';
 import { Task } from '../../../../core/interfaces/Task.interface';
-import { selectTasks } from '../../../../state/selectors/tasks.selectors';
-import { taskActions } from '../../../../state/actions/tasks.actions';
-import { AppState } from '../../../../state/app.state';
 
 @Component({
   selector: 'app-task-list',
@@ -12,19 +9,17 @@ import { AppState } from '../../../../state/app.state';
   styleUrl: './task-list.component.scss',
 })
 export class TaskListComponent {
-  tasks$: any;
+  tasks: Task[] = [];
 
-  constructor(
-    private taskService: TaskService,
-    private store: Store<AppState>
-  ) {
-    this.tasks$ = this.store.select(selectTasks);
-  }
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.taskService.getTasksTest().subscribe({
+    this.taskService.getTasks().subscribe({
       next: (res) => {
-        this.store.dispatch(taskActions.getTasksList({ tasks: res }));
+        this.tasks = res;
+      },
+      error: (err) => {
+        console.log(err);
       },
     });
     // this.tasks = this.store.select(selectTasksList);

@@ -2,7 +2,10 @@
 
 .tasks-table {
   padding: 1rem;
-
+  min-height: 80vh;
+  .p-datatable>.p-datatable-wrapper {
+    min-height: 80vh;
+  }
   &__header {
     display: flex;
     align-items: center;
@@ -54,7 +57,7 @@
     color: #373737;
     text-align: center;
   }
-  
+
   .p-button {
     background-color: #33a3aa;
     border: none;

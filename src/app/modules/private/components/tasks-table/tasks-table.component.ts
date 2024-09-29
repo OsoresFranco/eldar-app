@@ -14,25 +14,8 @@ import { Task } from '../../../../core/interfaces/Task.interface';
   styleUrl: './tasks-table.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class TasksTableComponent implements OnInit, OnChanges {
+export class TasksTableComponent {
   @Input() tasks: Task[] = [];
-
-  ngOnInit(): void {
-    console.log(this.tasks);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['tasks'] && changes['tasks'].currentValue) {
-      const currentTasks = changes['tasks'].currentValue;
-
-      if (currentTasks.tasks) {
-        this.tasks = currentTasks.tasks;
-      } else {
-        this.tasks = currentTasks;
-      }
-      console.log(this.tasks);
-    }
-  }
 
   headers: string[] = [
     'user',

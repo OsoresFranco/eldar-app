@@ -43,7 +43,7 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
-        >Not a valid email.</small
+        >Required. Must be a valid email address.</small
       >
     </div>
     <div class="register-form__form-input">
@@ -59,7 +59,8 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-        >Not a valid password.</small
+        >Required. Must be at least 8 characters,<br />
+        include a letter and a number.</small
       >
     </div>
   </form>

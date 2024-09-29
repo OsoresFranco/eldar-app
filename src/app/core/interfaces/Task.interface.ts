@@ -3,7 +3,6 @@ export interface Task {
   title: string;
   createdAt: Date;
   deadline: Date;
-  status: 'pending' | 'blocked' | 'in progress' | 'completed' | 'unassigned';
+  status: 'pending' | 'blocked' | 'inProgress' | 'completed' | 'unassigned';
   complexity: 'low' | 'medium' | 'high';
-  actions: string[];
 }
