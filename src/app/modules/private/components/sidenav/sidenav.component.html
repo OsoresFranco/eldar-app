@@ -1,4 +1,4 @@
-<div class="sidenav">
+<div class="sidenav" *ngIf="user">
   <p-sidebar [(visible)]="sidebarVisible">
     <div class="sidenav__bar">
       <ng-container *ngFor="let link of linkList">
@@ -10,6 +10,12 @@
           [route]="link.route"
         ></app-link-item>
       </ng-container>
+      <app-link-item
+        (click)="logOut(true)"
+        icon="pi-sign-out"
+        label="logOut"
+        route="/login"
+      ></app-link-item>
     </div>
   </p-sidebar>
   <div class="sidenav__compressed-list">
@@ -26,6 +32,13 @@
           [showLabel]="false"
         ></app-link-item>
       </ng-container>
+      <app-link-item
+        (click)="logOut(false)"
+        icon="pi-sign-out"
+        label="logOut"
+        route="/login"
+        [showLabel]="false"
+      ></app-link-item>
     </div>
   </div>
 </div>

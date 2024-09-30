@@ -14,7 +14,9 @@ export class SidenavComponent implements OnInit {
   sidebarVisible: boolean = false;
   user!: UserProfile;
 
-  constructor(private cookieService: CookieService) {}
+  constructor(private cookieService: CookieService) {
+
+  }
 
   ngOnInit(): void {
     this.user = JSON.parse(this.cookieService.get('user'));
@@ -38,9 +40,16 @@ export class SidenavComponent implements OnInit {
     this.sidebarVisible = !this.sidebarVisible;
   }
 
+  logOut(isMobile: boolean) {
+    this.cookieService.delete('user');
+    this.cookieService.delete('authToken');
+    if (isMobile) {
+      this.sidebarVisible = false;
+    }
+  }
+
   hasAccess(link: Links): boolean {
     if (!link.roleAllowed) return true;
-    console.log(this.user.role, link.roleAllowed)
     return this.user.role === link.roleAllowed;
   }
 }

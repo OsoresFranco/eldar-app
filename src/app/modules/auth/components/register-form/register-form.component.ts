@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ProfileService } from '../../../../core/services/profile.service';
 import { CookieService } from 'ngx-cookie-service';
+import { timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -23,7 +25,8 @@ export class RegisterFormComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private cookiService: CookieService,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private router: Router
   ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -58,6 +61,11 @@ export class RegisterFormComponent {
           this.profileService.getProfile().subscribe({
             next: (res) => {
               this.cookiService.set('user', JSON.stringify(res));
+            },
+          });
+          timer(500).subscribe({
+            next: () => {
+              this.router.navigate(['/private']);
             },
           });
         },

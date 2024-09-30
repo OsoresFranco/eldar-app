@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserModalComponent } from '../../components/user-modal/user-modal.component';
 import { AuthService } from '../../../auth/services/auth.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,7 +37,11 @@ export class DashboardComponent implements OnInit {
           if (res) {
             console.log(res);
             if (res) {
-              this.getUsers();
+              timer(500).subscribe({
+                next: () => {
+                  this.getUsers();
+                },
+              });
             }
           }
         },

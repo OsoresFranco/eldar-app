@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { ProfileService } from '../../../../core/services/profile.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-login-form',
@@ -57,7 +58,11 @@ export class LoginFormComponent {
               this.cookiService.set('user', JSON.stringify(res));
             },
           });
-          this.router.navigate(['/private']);
+          timer(500).subscribe({
+            next: () => {
+              this.router.navigate(['/private']);
+            },
+          });
         },
         error: (err) => {
           console.log(err);
