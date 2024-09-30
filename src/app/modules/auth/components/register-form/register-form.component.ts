@@ -6,6 +6,8 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { ProfileService } from '../../../../core/services/profile.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-register-form',
@@ -17,7 +19,12 @@ export class RegisterFormComponent {
   @Output() changeAtuhAction = new EventEmitter<string>();
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private cookiService: CookieService,
+    private profileService: ProfileService
+  ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -37,6 +44,7 @@ export class RegisterFormComponent {
           Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d).{8,}$'),
         ],
       ],
+      role: ['admin'],
     });
   }
 
@@ -46,7 +54,12 @@ export class RegisterFormComponent {
       user = { ...user, role: 'admin' };
       this.authService.postSignUp(this.form.value).subscribe({
         next: (res) => {
-          console.log(res);
+          this.cookiService.set('authToken', res.authToken);
+          this.profileService.getProfile().subscribe({
+            next: (res) => {
+              this.cookiService.set('user', JSON.stringify(res));
+            },
+          });
         },
       });
     }
