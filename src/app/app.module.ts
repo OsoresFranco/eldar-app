@@ -16,6 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CookieService } from 'ngx-cookie-service';
 import { headersInterceptor } from './core/interceptors/headers.interceptor';
+import { spinnerInterceptor } from './core/interceptors/spinner.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +42,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     provideAnimationsAsync(),
     CookieService,
-    provideHttpClient(withInterceptors([headersInterceptor])),
+    provideHttpClient(
+      withInterceptors([headersInterceptor, spinnerInterceptor])
+    ),
   ],
   bootstrap: [AppComponent],
 })

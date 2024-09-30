@@ -1,0 +1,17 @@
+app-spinner {
+    /* Posicionamiento */
+    position: fixed; /* Fija el spinner en una posición en la ventana del navegador */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  
+    /* Centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Backdrop */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  }

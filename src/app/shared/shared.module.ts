@@ -4,9 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [SpinnerComponent],
   imports: [CommonModule, PrimeNgModule],
   exports: [
     TranslateModule,
@@ -14,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     DialogModule,
-    
+    SpinnerComponent,
   ],
 })
 export class SharedModule {}

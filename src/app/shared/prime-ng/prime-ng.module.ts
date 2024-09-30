@@ -12,6 +12,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ToastModule } from 'primeng/toast';
 import { CalendarModule } from 'primeng/calendar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [],
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     RadioButtonModule,
     CalendarModule,
     MatDialogModule,
+    ProgressSpinnerModule
   ],
 })
 export class PrimeNgModule {}
