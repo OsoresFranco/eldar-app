@@ -13,6 +13,11 @@
   );
   position: relative;
   overflow: hidden;
+  &__language {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+  }
   &__video {
     position: absolute;
     top: 0;

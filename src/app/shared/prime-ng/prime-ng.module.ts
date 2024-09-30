@@ -30,7 +30,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     RadioButtonModule,
     CalendarModule,
     MatDialogModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
   ],
 })
 export class PrimeNgModule {}

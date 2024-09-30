@@ -2,6 +2,13 @@
   <video class="auth-home__video" autoplay loop muted>
     <source src="assets/video/timelapse.mp4" />
   </video>
+  <div class="auth-home__language">
+    <p-dropdown
+      [options]="langOptions"
+      [(ngModel)]="language"
+      (onChange)="onLanguageSelect()"
+    />
+  </div>
   <div class="auth-home__splash">
     <div class="auth-home__splash-title">
       {{ "AUTH_HOME.TITLE" | translate }}

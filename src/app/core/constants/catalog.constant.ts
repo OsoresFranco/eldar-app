@@ -9,3 +9,4 @@ export const STATUS_LIST = [
 ];
 
 export const ROLE_LIST = ['user', 'admin'];
+export const LANGUAGE_LIST = ['es', 'en'];

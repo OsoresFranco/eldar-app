@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SpinnerService } from './core/services/spinner.service';
+import { LangServiceService } from './core/services/lang-service.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private spinnerService: SpinnerService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private langService: LangServiceService
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit {
       browserLang && supportedLanguages.includes(browserLang)
         ? browserLang
         : 'es';
+
+    this.langService.changeLanguage(selectedLang);
 
     this.translate.use(selectedLang);
   }
