@@ -28,11 +28,12 @@ export class TaskModalComponent {
 
   submit() {
     if (this.taskInformationForm.valid) {
-      console.log(this.taskInformationForm.value);
       const task = this.taskInformationForm.value;
-      // this.taskService.postTask(task).subscribe((response) => {
-      //   console.log(response);
-      // });
+      task.deadline = new Date(task.deadline);
+
+      this.taskService.postTask(task).subscribe((response) => {
+        console.log(response);
+      });
     }
   }
 }
