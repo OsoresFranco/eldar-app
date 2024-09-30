@@ -16,6 +16,10 @@ import {
 } from '../../../../core/constants/catalog.constant';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskModalComponent } from '../task-modal/task-modal.component';
+import { Links } from '../../../../core/interfaces/Links.interface';
+import { CookieService } from 'ngx-cookie-service';
+import { UserProfile } from '../../../../core/interfaces/UserProfile.interface';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-tasks-table',
@@ -23,10 +27,11 @@ import { TaskModalComponent } from '../task-modal/task-modal.component';
   styleUrl: './tasks-table.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class TasksTableComponent implements OnChanges {
+export class TasksTableComponent implements OnChanges, OnInit {
   @Input() tasks: Task[] = [];
   @Output() updateEmitter = new EventEmitter<boolean>();
-
+  user!: UserProfile;
+  displayedHeaders: string[] = [];
   headers: string[] = [
     'user',
     'title',
@@ -38,12 +43,31 @@ export class TasksTableComponent implements OnChanges {
   ];
   complexityList: any[] = COMPLEXITY_LIST;
   statusList: any[] = STATUS_LIST;
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private cookieService: CookieService,
+    private taskService: TaskService
+  ) {
+    this.user = JSON.parse(this.cookieService.get('user'));
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tasks']) {
       this.tasks = changes['tasks'].currentValue;
-      console.log(this.tasks)
+      console.log(this.tasks);
+    }
+  }
+
+  ngOnInit(): void {
+    this.setupHeaders();
+  }
+
+  setupHeaders(): void {
+    this.displayedHeaders = [...this.headers];
+    if (!this.hasAccess('admin')) {
+      this.displayedHeaders = this.displayedHeaders.filter(
+        (header) => header !== 'actions'
+      );
     }
   }
   onStatusSelect(event: any) {
@@ -69,5 +93,17 @@ export class TasksTableComponent implements OnChanges {
         console.log(`Dialog result: ${result}`);
         this.updateEmitter.emit(result);
       });
+  }
+
+  hasAccess(role: string): boolean {
+    return this.user.role === role;
+  }
+
+  deleteTask(task: any) {
+    this.taskService.deleteTask(task).subscribe({
+      next: (res) => {
+        this.updateEmitter.emit(true);
+      },
+    });
   }
 }

@@ -2,6 +2,7 @@
   <div class="tasks-table__header">
     <div class="tasks-table__header-title">Tareas</div>
     <p-button
+      *ngIf="hasAccess('admin')"
       (onClick)="showDialog()"
       label="crear"
       icon="pi pi-plus"
@@ -13,7 +14,7 @@
     <p-table [value]="tasks" [tableStyle]="{ 'min-width': '30rem' }">
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <ng-container *ngFor="let header of headers">
+          <ng-container *ngFor="let header of displayedHeaders">
             <th>{{ header }}</th>
           </ng-container>
         </tr>
@@ -57,8 +58,11 @@
               placeholder="Complexity"
             />
           </td>
-          <td>
+          <td *ngIf="hasAccess('admin')">
             {{ tasks.actions }}
+            <p-button class="button--delete" (onClick)="deleteTask(tasks)"
+              >Delete</p-button
+            >
           </td>
         </tr>
       </ng-template>

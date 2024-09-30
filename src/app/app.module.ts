@@ -8,7 +8,6 @@ import { SharedModule } from './shared/shared.module';
 import {
   HttpClientModule,
   HttpClient,
-  HTTP_INTERCEPTORS,
   provideHttpClient,
   withInterceptors,
 } from '@angular/common/http';
@@ -42,9 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     provideAnimationsAsync(),
     CookieService,
-    provideHttpClient(
-      withInterceptors([headersInterceptor])
-    ),
+    provideHttpClient(withInterceptors([headersInterceptor])),
   ],
   bootstrap: [AppComponent],
 })

@@ -3,6 +3,7 @@
     <div class="sidenav__bar">
       <ng-container *ngFor="let link of linkList">
         <app-link-item
+          *ngIf="hasAccess(link)"
           (click)="toggleSidebar()"
           [icon]="link.icon"
           [label]="link.label"
@@ -18,6 +19,7 @@
     <div class="sidenav__compressed-list-items">
       <ng-container *ngFor="let link of linkList">
         <app-link-item
+          *ngIf="hasAccess(link)"
           [icon]="link.icon"
           [route]="link.route"
           [label]="link.label"

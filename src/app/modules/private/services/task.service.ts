@@ -20,4 +20,10 @@ export class TaskService {
       data
     );
   }
+
+  deleteTask(data: any): Observable<any> {
+    return this.http.delete(
+      `https://x8ki-letl-twmt.n7.xano.io/api:PM0RGqcn/tasks/${data.id}`
+    );
+  }
 }
