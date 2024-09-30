@@ -1,27 +1,64 @@
-# EldarApp
+# Task Management Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+This is a straightforward task management application built with Angular, incorporating NgPrime for UI components, ngx-translate for internationalization, ngx-cookies for cookie management, and Material UI for additional styling options.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* **User Roles:** 
+    * **Admin:**
+        * Create and manage tasks
+        * Create and manage users (both admin and user roles)
+        * Access to a dedicated dashboard section
+    * **User:**
+        * View assigned tasks
+        * Update task statuses
 
-## Code scaffolding
+* **Dynamic Sections:** 
+    * Task deletion functionality (visible only to authorized users)
+    * Admin dashboard section (accessible only to admins)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* **Technology Stack:** 
+    * **Frontend:** Angular
+    * **UI Components:** NgPrime, Material UI
+    * **Internationalization:** ngx-translate
+    * **Cookie Management:** ngx-cookies
+    * **Backend Communication:** Custom services interacting with a Xano API
 
-## Build
+* **Styling:** 
+    * Predominantly custom CSS for colors, layout, and overall visual design
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* **Architecture:** 
+    * Modular structure for better organization and maintainability
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Clone the repository:**
 
-## Running end-to-end tests
+   ```bash
+   git clone https://github.com/OsoresFranco/eldar-app.git
+   
+2. **Install dependencies:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   npm install
+3. **Run the application:**
 
-## Further help
+   ```bash
+   ng serve
+   
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project Structure
+
+-   **`src/app`:** Contains the main application modules and components.
+-   **`src/assets`:** Stores static assets like images, fonts, etc.
+- 
+## Key Modules
+
+-   **`core`:** Core functionalities and services (e.g., `TaskService`, `AuthService`).
+-   **`shared`:** Reusable components and pipes.
+-   **`modules`:** Feature modules for different sections of the application (e.g., `dashboard`, `tasks`).
+   
+## Additional Notes
+
+-   **Authentication:** The application uses `ngx-cookies` to manage authentication tokens. You might need to implement a login/registration flow to obtain and store the token.
+-   **Internationalization:** The `ngx-translate` library is used for internationalization. Translation files should be placed in the `src/assets/i18n` folder.
