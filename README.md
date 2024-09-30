@@ -2,6 +2,9 @@
 
 This is a straightforward task management application built with Angular, incorporating NgPrime for UI components, ngx-translate for internationalization, ngx-cookies for cookie management, and Material UI for additional styling options.
 
+## Live Preview
+https://66fab7d23273cd1f6ba2ffac--shiny-sundae-31e67b.netlify.app
+
 ## Features
 
 * **User Roles:** 
