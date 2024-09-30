@@ -54,7 +54,7 @@ export class TasksTableComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tasks']) {
       this.tasks = changes['tasks'].currentValue;
-      console.log(this.tasks);
+
     }
   }
 
@@ -90,7 +90,6 @@ export class TasksTableComponent implements OnChanges, OnInit {
       .open(TaskModalComponent)
       .afterClosed()
       .subscribe((result) => {
-        console.log(`Dialog result: ${result}`);
         this.updateEmitter.emit(result);
       });
   }

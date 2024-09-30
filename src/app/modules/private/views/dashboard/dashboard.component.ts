@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
       .subscribe({
         next: (res) => {
           if (res) {
-            console.log(res);
+
             if (res) {
               timer(500).subscribe({
                 next: () => {

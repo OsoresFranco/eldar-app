@@ -32,7 +32,7 @@ export class TaskModalComponent {
       task.deadline = new Date(task.deadline);
 
       this.taskService.postTask(task).subscribe((response) => {
-        console.log(response);
+
       });
     }
   }
