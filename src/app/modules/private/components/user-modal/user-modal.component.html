@@ -1,0 +1,84 @@
+<div mat-dialog-title>Titulo modal</div>
+<mat-dialog-content>
+  <form [formGroup]="userForm" class="user-dialog__form">
+    <div class="user-dialog__form-field">
+      <p-floatLabel>
+        <input pInputText id="name" formControlName="name" />
+        <label for="name">name</label>
+      </p-floatLabel>
+      <small
+        *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
+        >Required. Must be a valid user address.</small
+      >
+    </div>
+    <div class="user-dialog__form-field">
+      <p-floatLabel>
+        <input pInputText id="lastName" formControlName="lastName" />
+        <label for="lastName">lastName</label>
+      </p-floatLabel>
+      <small
+        *ngIf="
+          userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched
+        "
+        >Required. Must be a valid user address.</small
+      >
+    </div>
+    <div class="user-dialog__form-field">
+      <p-floatLabel>
+        <input pInputText id="email" formControlName="email" />
+        <label for="email">email</label>
+      </p-floatLabel>
+      <small
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+        >Required. Must be a valid user address.</small
+      >
+    </div>
+    <div class="user-dialog__form-field">
+      <p-floatLabel>
+        <input
+          pInputText
+          type="password"
+          id="password"
+          formControlName="password"
+        />
+        <label for="password">password</label>
+      </p-floatLabel>
+      <small
+        *ngIf="
+          userForm.get('password')?.invalid && userForm.get('password')?.touched
+        "
+        >Required. Must be a valid user address.</small
+      >
+    </div>
+    <div class="user-dialog__form-field">
+      <div class="user-dialog__form-field-options">
+        <div class="user-dialog__form-field-title">Roles</div>
+        <div
+          class="user-dialog__form-field-options-radio"
+          *ngFor="let role of roleList"
+        >
+          <input
+            type="radio"
+            [id]="role"
+            [name]="'role'"
+            [value]="role"
+            formControlName="role"
+          />
+          <label [for]="role">
+            {{ role }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<div mat-dialog-actions class="user-dialog__action">
+  <p-button
+    [mat-dialog-close]="true"
+    (onClick)="submit()"
+    [label]="'TASK_MODAL.BUTTON_LABEL' | translate"
+    icon="pi pi-arrow-circle-right"
+    iconPos="right"
+  />
+</div>

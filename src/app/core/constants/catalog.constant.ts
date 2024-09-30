@@ -7,3 +7,5 @@ export const STATUS_LIST = [
   'completed',
   'unassigned',
 ];
+
+export const ROLE_LIST = ['user', 'admin'];

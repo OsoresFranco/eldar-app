@@ -21,4 +21,10 @@ export class AuthService {
       data
     );
   }
+
+  getUsers(): Observable<any> {
+    return this.http.get(
+      'https://x8ki-letl-twmt.n7.xano.io/api:xhy6uV5C/users'
+    );
+  }
 }

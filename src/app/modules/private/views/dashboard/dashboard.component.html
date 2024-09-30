@@ -1,1 +1,39 @@
-<div>DASHBOARD</div>
+<div class="users-table">
+  <div class="users-table__header">
+    <div class="users-table__header-title">Usuarios</div>
+    <p-button
+      (onClick)="showDialog()"
+      label="crear"
+      icon="pi pi-plus"
+      iconPos="right"
+    />
+  </div>
+
+  <ng-container>
+    <p-table [value]="users" [tableStyle]="{ 'min-width': '30rem' }">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <ng-container *ngFor="let header of headers">
+            <th>{{ header }}</th>
+          </ng-container>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-users let-columns="columns">
+        <tr class="users-table__data-row">
+          <td>
+            {{ users.name }}
+          </td>
+          <td>
+            {{ users.lastName }}
+          </td>
+          <td>
+            {{ users.email }}
+          </td>
+          <td>
+            {{ users.role }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-container>
+</div>

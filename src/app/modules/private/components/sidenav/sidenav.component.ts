@@ -40,7 +40,7 @@ export class SidenavComponent implements OnInit {
 
   hasAccess(link: Links): boolean {
     if (!link.roleAllowed) return true;
-    this.user.role;
+    console.log(this.user.role, link.roleAllowed)
     return this.user.role === link.roleAllowed;
   }
 }
