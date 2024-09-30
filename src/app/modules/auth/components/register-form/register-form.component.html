@@ -19,7 +19,7 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
-        >Not a valid name.</small
+        >{{'REGISTER_FORM.NAME_ERROR' | translate}}</small
       >
     </div>
     <div class="register-form__form-input">
@@ -32,7 +32,7 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched"
-        >Not a valid lastName.</small
+        >{{'REGISTER_FORM.LAST_NAME_ERROR' | translate}}</small
       >
     </div>
     <div class="register-form__form-input">
@@ -43,7 +43,7 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
-        >Required. Must be a valid email address.</small
+        >{{'REGISTER_FORM.EMAIL_ERROR' | translate}}</small
       >
     </div>
     <div class="register-form__form-input">
@@ -59,8 +59,7 @@
       <small
         class="register-form__form-input-error"
         *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-        >Required. Must be at least 8 characters,<br />
-        include a letter and a number.</small
+        >{{'REGISTER_FORM.PASSWORD_ERROR' | translate}}</small
       >
     </div>
   </form>

@@ -14,7 +14,9 @@
     "EMAIL": "Correo Electrónico",
     "DISCLAIMER": "Sujeto a la Política de",
     "DISCLAIMER_POLICY": "Privacidad y Condiciones.",
-    "LOGIN_TITLE": "Iniciar Sesión"
+    "LOGIN_TITLE": "Iniciar Sesión",
+    "EMAIL_ERROR": "Requerido. Debe ser un correo valido.",
+    "PASSWORD_ERROR": "Requerido. Debe tener al menos 8 caracteres, incluir una letra y un número."
   },
   "REGISTER_FORM": {
     "NAME": "Nombre",
@@ -25,10 +27,39 @@
     "BUTTON_LABEL": "Registrarse",
     "DISCLAIMER": "Sujeto a la",
     "DISCLAIMER_POLICY": "Política de privacidad y términos.",
-    "REGISTER_TITLE": "Registrarse como administrador"
+    "REGISTER_TITLE": "Registrarse como administrador",
+    "NAME_ERROR": "Requerido. \nNo es un nombre válido",
+    "LAST_NAME_ERROR": "Requerido. No es un apellido válido",
+    "EMAIL_ERROR": "Requerido. \nNo es un correo válido",
+    "PASSWORD_ERROR": "Requerido. Debe tener al menos 8 caracteres, incluir una letra y un número."
   },
   "APP_TITLE": "Eldar Taskify Application",
   "TASK_MODAL": {
-    "BUTTON_LABEL": "Entregar"
+    "BUTTON_LABEL": "Entregar",
+    "TITLE": "Creación de tareas",
+    "TITLE_LABEL": "Descripción de la tarea",
+    "TITLE_ERROR": "Requerido. \nDebe ser una descripción válida.",
+    "COMPLEXITY": "Complejidad"
+  },
+  "TASKS_TABLE": {
+    "TITLE": "Tareas"
+  },
+  "USER_MODAL": {
+    "TITLE": "Crear usuario",
+    "NAME": "Nombre",
+    "LASTNAME": "Apellido",
+    "PASSWORD": "Contraseña",
+    "ERROR_PASSWORD": "Requerido. Debe tener al menos 8 caracteres, incluir una letra y número."
+  },
+  "USAR_MODAL": {
+    "NAME_ERROR": "Requerido. Debe ser un nombre válido.",
+    "LASTNAME_ERROR": "Requerido. Debe ser un nombre de usuario válido.",
+    "EMAIL_ERROR": "Requerido. Debe ser un email válido."
+  },
+  "USAER_MODAL": {
+    "EMAIL": "Correo electrónico"
+  },
+  "DASHBOARD": {
+    "USERS": "Usuarios"
   }
 }

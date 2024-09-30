@@ -14,7 +14,7 @@ export class TaskListComponent {
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    // this.getData();
+    this.getData();
   }
 
   getData() {

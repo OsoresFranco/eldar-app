@@ -1,17 +1,17 @@
-<div mat-dialog-title>Titulo modal</div>
+<div mat-dialog-title>{{ "TASK_MODAL.TITLE" | translate }}</div>
 <mat-dialog-content>
   <form [formGroup]="taskInformationForm" class="dialog__form">
     <div class="dialog__form-field">
       <p-floatLabel>
         <input pInputText id="title" formControlName="title" />
-        <label for="title">title</label>
+        <label for="title">{{ "TASK_MODAL.TITLE_LABEL" | translate }}</label>
       </p-floatLabel>
       <small
         *ngIf="
           taskInformationForm.get('title')?.invalid &&
           taskInformationForm.get('title')?.touched
         "
-        >Required. Must be a valid user address.</small
+        >{{ "TASK_MODAL.TITLE_ERROR" | translate }}</small
       >
     </div>
     <div class="dialog__form-field">
@@ -22,7 +22,9 @@
       />
     </div>
     <div class="dialog__form-field">
-      <div class="dialog__form-field-title">Complexity</div>
+      <div class="dialog__form-field-title">
+        {{ "TASK_MODAL.COMPLEXITY" | translate }}
+      </div>
       <div class="dialog__form-field-options">
         <div
           class="dialog__form-field-options-radio"

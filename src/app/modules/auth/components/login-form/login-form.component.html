@@ -1,6 +1,10 @@
 <div class="login-form">
   <div class="login-form__logo">
-    <img class="login-form__logo-img" src="assets/images/logo.png" alt="Eldar logo" />
+    <img
+      class="login-form__logo-img"
+      src="assets/images/logo.png"
+      alt="Eldar logo"
+    />
   </div>
   <div class="login-form__title">{{ "APP_TITLE" | translate }}</div>
   <div class="login-form__sub-title">
@@ -15,7 +19,7 @@
       <small
         class="login-form__form-input-error"
         *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
-        >Required. Must be a valid email address.</small
+        >{{ "LOGIN_FORM.EMAIL_ERROR" | translate }}</small
       >
     </div>
     <div class="login-form__form-input">
@@ -31,8 +35,7 @@
       <small
         class="login-form__form-input-error"
         *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-        >Required. Must be at least 8 characters,<br />
-        include a letter and a number.</small
+        >{{ "LOGIN_FORM.PASSWORD_ERROR" | translate }}</small
       >
     </div>
   </form>

@@ -14,7 +14,9 @@
     "EMAIL": "Email",
     "DISCLAIMER": "Subject to the",
     "DISCLAIMER_POLICY": "Privacy Policy and Terms.",
-    "LOGIN_TITLE": "Log in"
+    "LOGIN_TITLE": "Log in",
+    "EMAIL_ERROR": "Required. Must be a valida mail",
+    "PASSWORD_ERROR": "Required. Must be at least 8 characters include a letter and number"
   },
   "REGISTER_FORM": {
     "NAME": "Name",
@@ -25,10 +27,40 @@
     "BUTTON_LABEL": "Register",
     "DISCLAIMER": "Subject to the",
     "DISCLAIMER_POLICY": "Privacy Policy and Terms.",
-    "REGISTER_TITLE": "Register as administrator"
+    "REGISTER_TITLE": "Register as administrator",
+    "NAME_ERROR": "Required. Not a valid Name",
+    "LAST_NAME_ERROR": "Required. Not a valid last name",
+    "EMAIL_ERROR": "Required. Not a valid mail",
+    "PASSWORD_ERROR": "Required. Must be at least 8 chars, include a letter and number."
   },
   "APP_TITLE": "Eldar Taskify Application",
   "TASK_MODAL": {
-    "BUTTON_LABEL": "Submit"
+    "BUTTON_LABEL": "Submit",
+    "TITLE": "Task Creation",
+    "TITLE_LABEL": "Task Description",
+    "TITLE_ERROR": "Required. Must be a valid description.",
+    "COMPLEXITY": "Complexity"
+  },
+  "TASKS_TABLE": {
+    "TITLE": "Tasks",
+    "DELETE": "Delete"
+  },
+  "USER_MODAL": {
+    "TITLE": "Create User",
+    "NAME": "Name",
+    "LASTNAME": "Lastname",
+    "PASSWORD": "Password",
+    "ERROR_PASSWORD": "Required. Must be at least 8 chars include a letter and number"
+  },
+  "USAR_MODAL": {
+    "NAME_ERROR": "Required. Must be a valid user name.",
+    "LASTNAME_ERROR": "Required. Must be a valid user lastname.",
+    "EMAIL_ERROR": "Required. Must be a valid user email."
+  },
+  "USAER_MODAL": {
+    "EMAIL": "Email"
+  },
+  "DASHBOARD": {
+    "USERS": "Users"
   }
 }

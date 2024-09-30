@@ -1,6 +1,8 @@
 <div class="tasks-table">
   <div class="tasks-table__header">
-    <div class="tasks-table__header-title">Tareas</div>
+    <div class="tasks-table__header-title">
+      {{ "TASKS_TABLE.TITLE" | translate }}
+    </div>
     <p-button
       *ngIf="hasAccess('admin')"
       (onClick)="showDialog()"
@@ -60,9 +62,9 @@
           </td>
           <td *ngIf="hasAccess('admin')">
             {{ tasks.actions }}
-            <p-button class="button--delete" (onClick)="deleteTask(tasks)"
-              >Delete</p-button
-            >
+            <p-button class="button--delete" (onClick)="deleteTask(tasks)">{{
+              "TASKS_TABLE.DELETE" | translate
+            }}</p-button>
           </td>
         </tr>
       </ng-template>

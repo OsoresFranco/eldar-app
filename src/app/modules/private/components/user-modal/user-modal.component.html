@@ -1,36 +1,36 @@
-<div mat-dialog-title>Titulo modal</div>
+<div mat-dialog-title>{{ "USER_MODAL.TITLE" | translate }}</div>
 <mat-dialog-content>
   <form [formGroup]="userForm" class="user-dialog__form">
     <div class="user-dialog__form-field">
       <p-floatLabel>
         <input pInputText id="name" formControlName="name" />
-        <label for="name">name</label>
+        <label for="name">{{ "USER_MODAL.NAME" | translate }}</label>
       </p-floatLabel>
       <small
         *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
-        >Required. Must be a valid user address.</small
+        >{{ "USAR_MODAL.NAME_ERROR" | translate }}</small
       >
     </div>
     <div class="user-dialog__form-field">
       <p-floatLabel>
         <input pInputText id="lastName" formControlName="lastName" />
-        <label for="lastName">lastName</label>
+        <label for="lastName">{{'USER_MODAL.LASTNAME' | translate}}</label>
       </p-floatLabel>
       <small
         *ngIf="
           userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched
         "
-        >Required. Must be a valid user address.</small
+        >{{ "USAR_MODAL.LASTNAME_ERROR" | translate }}</small
       >
     </div>
     <div class="user-dialog__form-field">
       <p-floatLabel>
         <input pInputText id="email" formControlName="email" />
-        <label for="email">email</label>
+        <label for="email">{{'USAER_MODAL.EMAIL' | translate}}</label>
       </p-floatLabel>
       <small
         *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
-        >Required. Must be a valid user address.</small
+        >{{ "USAR_MODAL.EMAIL_ERROR" | translate }}</small
       >
     </div>
     <div class="user-dialog__form-field">
@@ -41,13 +41,13 @@
           id="password"
           formControlName="password"
         />
-        <label for="password">password</label>
+        <label for="password">{{'USER_MODAL.PASSWORD' | translate}}</label>
       </p-floatLabel>
       <small
         *ngIf="
           userForm.get('password')?.invalid && userForm.get('password')?.touched
         "
-        >Required. Must be a valid user address.</small
+        >{{'USER_MODAL.ERROR_PASSWORD' | translate}}</small
       >
     </div>
     <div class="user-dialog__form-field">
