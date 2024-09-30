@@ -7,6 +7,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Task } from '../../../../core/interfaces/Task.interface';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  COMPLEXITY_LIST,
+  STATUS_LIST,
+} from '../../../../core/constants/catalog.constant';
 
 @Component({
   selector: 'app-tasks-table',
@@ -26,15 +31,9 @@ export class TasksTableComponent {
     'complexity',
     'actions',
   ];
-  complexityList: any[] = ['low', 'medium', 'high'];
-  statusList: any[] = [
-    'pending',
-    'blocked',
-    'inProgress',
-    'completed',
-    'unassigned',
-  ];
-
+  complexityList: any[] = COMPLEXITY_LIST;
+  statusList: any[] = STATUS_LIST;
+  constructor() {}
   onStatusSelect(event: any) {
     console.log('Selected status:', event.value);
   }
@@ -48,5 +47,9 @@ export class TasksTableComponent {
     } else {
       return '';
     }
+  }
+  visible: boolean = false;
+  showDialog() {
+    this.visible = true;
   }
 }

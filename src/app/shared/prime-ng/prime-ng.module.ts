@@ -8,7 +8,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { MenuModule } from 'primeng/menu';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -22,7 +25,10 @@ import { ToastModule } from 'primeng/toast';
     TableModule,
     DropdownModule,
     MenuModule,
-    ToastModule
+    ToastModule,
+    RadioButtonModule,
+    CalendarModule,
+    MatDialogModule,
   ],
 })
 export class PrimeNgModule {}

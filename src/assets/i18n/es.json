@@ -27,5 +27,8 @@
     "DISCLAIMER_POLICY": "Política de privacidad y términos.",
     "REGISTER_TITLE": "Registrarse como administrador"
   },
-  "APP_TITLE": "Eldar Taskify Application"
+  "APP_TITLE": "Eldar Taskify Application",
+  "TASK_MODAL": {
+    "BUTTON_LABEL": "Entregar"
+  }
 }

@@ -3,7 +3,7 @@
 .tasks-table {
   padding: 1rem;
   min-height: 80vh;
-  .p-datatable>.p-datatable-wrapper {
+  .p-datatable > .p-datatable-wrapper {
     min-height: 80vh;
   }
   &__header {
@@ -94,4 +94,9 @@
   .high .p-dropdown .p-dropdown-label {
     color: #e74c3c;
   }
+
+
+}
+.p-dialog{
+  width: 40vw;
 }

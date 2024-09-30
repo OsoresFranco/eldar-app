@@ -10,6 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { LinkItemComponent } from './components/link-item/link-item.component';
 import { HomeComponent } from './views/home/home.component';
 import { TasksTableComponent } from './components/tasks-table/tasks-table.component';
+import { TaskModalComponent } from './components/task-modal/task-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TasksTableComponent } from './components/tasks-table/tasks-table.compon
     LinkItemComponent,
     HomeComponent,
     TasksTableComponent,
+    TaskModalComponent,
   ],
   imports: [CommonModule, PrivateRoutingModule, SharedModule],
 })

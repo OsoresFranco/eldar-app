@@ -14,18 +14,13 @@ export class TaskListComponent {
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe({
-      next: (res) => {
-        this.tasks = res;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-    // this.tasks = this.store.select(selectTasksList);
-    // this.store.dispatch(getTasks());
-    // this.taskService.getTasks().subscribe((data: any) => {
-    //   this.tasks = data;
+    // this.taskService.getTasks().subscribe({
+    //   next: (res) => {
+    //     this.tasks = res;
+    //   },
+    //   error: (err) => {
+    //     console.log(err);
+    //   },
     // });
   }
 

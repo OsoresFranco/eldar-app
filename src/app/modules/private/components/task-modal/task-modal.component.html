@@ -1,0 +1,53 @@
+<form [formGroup]="taskInformationForm" class="dialog__form">
+  <div class="dialog__form-field">
+    <p-floatLabel>
+      <input pInputText id="title" formControlName="title" />
+      <label for="title">title</label>
+    </p-floatLabel>
+    <small
+      *ngIf="
+        taskInformationForm.get('title')?.invalid &&
+        taskInformationForm.get('title')?.touched
+      "
+      >Required. Must be a valid user address.</small
+    >
+  </div>
+  <div class="dialog__form-field">
+    <input class="dialog__form-field-date" type="date" formControlName="deadline" />
+    <small
+      *ngIf="
+        taskInformationForm.get('deadline')?.invalid &&
+        taskInformationForm.get('deadline')?.touched
+      "
+      >Required. Must be a valid user deadline.</small
+    >
+  </div>
+  <div class="dialog__form-field">
+    <div class="dialog__form-field-title">Complexity</div>
+    <div class="dialog__form-field-options">
+      <div
+        class="dialog__form-field-options-radio"
+        *ngFor="let complexity of complexityList"
+      >
+        <input
+          type="radio"
+          [id]="complexity"
+          [name]="'complexity'"
+          [value]="complexity"
+          formControlName="complexity"
+        />
+        <label [for]="complexity">
+          {{ complexity }}
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="dialog__action">
+  <p-button
+    (onClick)="submit()"
+    [label]="'TASK_MODAL.BUTTON_LABEL' | translate"
+    icon="pi pi-arrow-circle-right"
+    iconPos="right"
+  />
+</div>

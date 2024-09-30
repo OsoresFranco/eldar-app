@@ -16,7 +16,7 @@ export class TaskService {
   }
   postTask(data: any): Observable<any> {
     return this.http.post(
-      'https://my-json-server.typicode.com/OsoresFranco/eldar-app/tasks',
+      'https://x8ki-letl-twmt.n7.xano.io/api:PM0RGqcn/tasks',
       data
     );
   }
