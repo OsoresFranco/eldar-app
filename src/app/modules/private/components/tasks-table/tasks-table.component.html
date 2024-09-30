@@ -24,13 +24,13 @@
       <ng-template pTemplate="body" let-tasks let-columns="columns">
         <tr class="tasks-table__data-row {{ isDueDate(tasks.deadline) }}">
           <td>
-            {{ tasks.user }}
+            {{ tasks.user || "Unassigned" | translate }}
           </td>
           <td>
             {{ tasks.title }}
           </td>
           <td>
-            {{ tasks.createdAt | date : "dd/MM/yyyy" }}
+            {{ tasks.created_at | date : "dd/MM/yyyy" }}
           </td>
           <td>
             {{ tasks.deadline | date : "dd/MM/yyyy" }}
@@ -43,7 +43,7 @@
             <p-dropdown
               [options]="statusList"
               [(ngModel)]="tasks.status"
-              (onChange)="onStatusSelect($event)"
+              (onChange)="onStatusSelect(tasks)"
               placeholder="Status"
             />
           </td>

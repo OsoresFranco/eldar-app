@@ -54,7 +54,6 @@ export class TasksTableComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tasks']) {
       this.tasks = changes['tasks'].currentValue;
-
     }
   }
 
@@ -71,14 +70,20 @@ export class TasksTableComponent implements OnChanges, OnInit {
     }
   }
   onStatusSelect(event: any) {
-    console.log('Selected status:', event.value);
+    console.log('Selected status:', event);
+    this.taskService.patchTask(event).subscribe({
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
   onComplexitySelect(event: any) {
     console.log('Selected complexity:', event.value);
   }
   isDueDate(date: Date) {
+    const compareDate = new Date(date);
     const fechaActual = new Date();
-    if (fechaActual > date) {
+    if (fechaActual > compareDate) {
       return 'tasks-table__data-row--due';
     } else {
       return '';

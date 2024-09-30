@@ -76,6 +76,7 @@
 <div mat-dialog-actions class="user-dialog__action">
   <p-button
     [mat-dialog-close]="true"
+    [disabled]="userForm.invalid"
     (onClick)="submit()"
     [label]="'TASK_MODAL.BUTTON_LABEL' | translate"
     icon="pi pi-arrow-circle-right"

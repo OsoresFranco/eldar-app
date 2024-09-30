@@ -26,4 +26,11 @@ export class TaskService {
       `https://x8ki-letl-twmt.n7.xano.io/api:PM0RGqcn/tasks/${data.id}`
     );
   }
+
+  patchTask(data: any): Observable<any> {
+    return this.http.patch(
+      `https://x8ki-letl-twmt.n7.xano.io/api:PM0RGqcn/tasks/${data.id}`,
+      data
+    );
+  }
 }

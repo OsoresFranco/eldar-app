@@ -45,6 +45,7 @@
     </div>
     <p-button
       class="login-form__actions-button"
+      [disabled]="form.invalid"
       (click)="submitForm()"
       [label]="'LOGIN_FORM.BUTTON_LABEL' | translate"
       icon="pi pi-sign-in"
